@@ -27,9 +27,17 @@ clf = SGDClassifier(loss = 'log',
                     random_state = 1,
                     max_iter=5,
                     tol=1e-3)
-
-doc_stream = DocStreamer.stream_docs(path = 'DATA\\ratings.csv')
-
+try:
+    doc_stream = DocStreamer.stream_docs(path = 'DATA\\ratings\\ratings.csv')
+	
+except FileNotFoundError:
+    
+    try:
+	    doc_stream = DocStreamer.stream_docs(path = 'DATA/ratings/ratings.csv')
+        
+    except FileNotFoundError:
+	    print("File wasn't found. Make sure you unzipped results.zip")
+	
 print("Training model...")
 
 # Gives us 45k for training
