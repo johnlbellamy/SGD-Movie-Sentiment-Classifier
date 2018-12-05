@@ -4,6 +4,9 @@ import pickle
 import os
 import string
 import pandas as pd
+import nltk
+nltk.download('stopwords')
+from nltk.corpus import stopwords
 
 class TextCleaner:
     """
@@ -61,20 +64,23 @@ class TextCleaner:
                         n_features = 2**21,
                         preprocessor = None,
                         tokenizer = cleaner.streaming_cleaner_and_tokenizer)
-            """  
-    
-    def __init__(self, tc_2000_home = ""):
+    """
+    def __init__(self, tc_2000_home = "", use_nltk_stops = False):
         self.tc_2000_home = tc_2000_home
-        pickle_file_path = 'stops.pkl'
+        self.use_nltk_stops = use_nltk_stops
         
-        if tc_2000_home == "":
-            pkl_file = open(os.path.join(os.getcwd() + '\\text_cleaner_2000',pickle_file_path), 'rb')
-            self.stop_words = pickle.load(pkl_file) 
-            pkl_file.close() 
+        if not use_nltk_stops:
+            pickle_file_path = 'stops.pkl'
+            if tc_2000_home == "":
+                pkl_file = open(os.path.join(os.getcwd() + '\\text_cleaner_2000',pickle_file_path), 'rb')
+                self.stop_words = pickle.load(pkl_file)
+                pkl_file.close()
+            else:
+                pkl_file = open(os.path.join(tc_2000_home,pickle_file_path), 'rb')
+                self.stop_words = pickle.load(pkl_file)
+                pkl_file.close()
         else:
-            pkl_file = open(os.path.join(tc_2000_home,pickle_file_path), 'rb')
-            self.stop_words = pickle.load(pkl_file) 
-            pkl_file.close() 
+            self.stop_words = stopwords.words('english') 
 
     def __alphaizer(self, text, remove_numeric, remove_emoticon):
         """Given a string (text), removes all punctuation and numbers.
