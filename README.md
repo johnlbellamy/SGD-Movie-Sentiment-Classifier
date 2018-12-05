@@ -1,6 +1,6 @@
 # Movie-Sentiment-Classifier
 ## A movie review sentiment classifier based on the IMDB ratings dataset from Stanford.
-## See an example of the app here: http://www.jlbdatasci.com/jobs/review/
+## See a demo of the model in an app here: http://www.jlbdatasci.com/jobs/review/
 Stochastic Gradient Descent is a great option for building data science web apps, where new data is constantly coming in (IOT is a use-case too) and for processing large amounts of data on a single machine.
 
 # Requirements
