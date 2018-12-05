@@ -17,6 +17,8 @@ From Command line:
 
 Otherwise, load in your favorite IDE.	
 
-# Once the model is built, you can use the model in your own app. See link above to see this model in action.
+Once the model is built, you can use the model in your own app. See link above to see this model in action.
+
+Data from:
 
 Andrew L. Maas, Raymond E. Daly, Peter T. Pham, Dan Huang, Andrew Y. Ng, and Christopher Potts. (2011). Learning Word Vectors for Sentiment Analysis. The 49th Annual Meeting of the Association for Computational Linguistics (ACL 2011).
