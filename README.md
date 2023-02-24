@@ -1,6 +1,6 @@
 # Movie-Sentiment-Classifier
 ## A movie review sentiment classifier based on the IMDB ratings dataset from Stanford.
-## See a demo of the model in an app here: http://www.jlbdatasci.com/jobs/review/
+
 Stochastic Gradient Descent is a great option for building data science web apps, where new data is constantly coming in (IOT is a use-case too) and for processing large amounts of data on a single machine.
 
 # Requirements
@@ -12,8 +12,10 @@ Assuming you have sklearn installed:
 
 # Use
 From Command line: 
-1) Navigate to project folder that contains sgd_movie_classifier
-2) Run command: python sgd_movie_classifier.py
+1) python -m venv .sent
+2) source .sent/bin/activate
+3) pip install -r requirements
+4) python sgd_movie_classifier.py
 
 Otherwise, load in your favorite IDE.	
 
